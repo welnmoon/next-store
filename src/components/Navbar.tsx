@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const currentPath = useRouter();

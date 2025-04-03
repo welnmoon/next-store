@@ -1,10 +1,10 @@
 import GoodCard from "@/components/GoodCard";
 import Head from "next/head";
-import { GoodType, GoodsType } from "../../../types";
+import { GoodsType } from "../../../types";
 import { GetServerSideProps } from "next";
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch(`${process.env.API_HOST}/api/goods`);
+  const response = await fetch(`${process.env.API_HOST}/products`);
   const data = await response.json();
 
   if (!data) return { notFound: true };
@@ -15,6 +15,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
+
 
 const Goods = ({ goods }: GoodsType) => {
   return (
